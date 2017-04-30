@@ -31,6 +31,6 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         value:'1',
         description:'follow ups'
       }
-    ]
+    ];
   }
 ]);
