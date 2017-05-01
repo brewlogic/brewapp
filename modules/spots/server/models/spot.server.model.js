@@ -34,7 +34,7 @@ var SpotSchema = new Schema({
     default: '',
     trim: true
   },
-  legit: {
+  isLegit: {
     type: Boolean,
     default: false
   }
