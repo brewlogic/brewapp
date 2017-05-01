@@ -1,0 +1,23 @@
+<section>
+  <div class="page-header">
+    <h1>Spots</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="spot in vm.spots"
+       ui-sref="spots.view({ spotId: spot._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="spot.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="spot.user" ng-bind="spot.user.displayName"></span>
+        <span ng-if="!spot.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="spot.name"></h4>
+      <h6 class="list-group-item"  ng-bind="spot.description"></h6>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.spots.$resolved && !vm.spots.length">
+    No Spots yet, why don't you <a ui-sref="spots.create">create one</a>?
+  </div>
+</section>
